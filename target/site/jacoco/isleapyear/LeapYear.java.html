@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LeapYear.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">isleapyear</a> &gt; <span class="el_source">LeapYear.java</span></div><h1>LeapYear.java</h1><pre class="source lang-java linenums">package isleapyear;
+
+public class LeapYear {
+	
+<span class="nc" id="L5">	public LeapYear() {}</span>
+	public static void main(String[] args) {
+<span class="nc" id="L7">		String prueba = &quot;2020&quot;;</span>
+   
+		try {
+<span class="nc" id="L10">			System.out.println(isLeapYear(prueba));</span>
+<span class="nc" id="L11">		} catch (NullPointerException e) {</span>
+<span class="nc" id="L12">			System.out.println(&quot;El string es nulo&quot;);</span>
+<span class="nc" id="L13">		} catch (EmptyException e) {</span>
+<span class="nc" id="L14">			System.out.println(&quot;El string esta vacío&quot;);</span>
+<span class="nc" id="L15">		} catch (NumberFormatException e) {</span>
+<span class="nc" id="L16">			System.out.println(&quot;El string no es un número entero válido&quot;);</span>
+<span class="nc" id="L17">		}</span>
+<span class="nc" id="L18">	}</span>
+	
+	/**
+	 * The function consists in if the string is any leap year between 0 and 2100,
+	 * but the year 0 will be false.
+     * @param a string.
+     * @return Returns a boolean.
+     * @throws NullPointerException When the string is null.
+     * @throws EmptyException When the string is empty.
+     * @throws NumberFormatException When the value of the string is not a integer.
+     */
+	public static boolean isLeapYear(String year) throws NullPointerException, EmptyException, NumberFormatException{
+		try {
+<span class="fc bfc" id="L31" title="All 2 branches covered.">			if (year.isEmpty()) {</span>
+<span class="fc" id="L32">		        throw new EmptyException();</span>
+		    }else {
+		    	try {
+<span class="fc" id="L35">		    		int num= Integer.parseInt(year);</span>
+<span class="fc bfc" id="L36" title="All 6 branches covered.">		    		return num&gt;0 &amp;&amp; num&lt;=2100 &amp;&amp; num % 4 == 0;		</span>
+<span class="fc" id="L37">		    	}catch (NumberFormatException e) {</span>
+<span class="fc" id="L38">		    		throw new NumberFormatException(); </span>
+		    	}
+		    }
+<span class="fc" id="L41"> 		}catch(NullPointerException e) {</span>
+<span class="fc" id="L42">			throw new NullPointerException();</span>
+			
+		}
+			
+	}
+	
+	
+
+
+	
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
