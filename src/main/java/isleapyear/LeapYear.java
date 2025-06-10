@@ -2,7 +2,12 @@ package isleapyear;
 
 public class LeapYear {
 	
-	public LeapYear() {}
+	
+	public LeapYear() {
+		// Constructor vacío
+		// No initialization required as all methods are static and no instance fields exist.
+	}
+
 	public static void main(String[] args) {
 		String prueba = "2020";
    
@@ -34,9 +39,9 @@ public class LeapYear {
 		    	try {
 		    		int num= Integer.parseInt(year);
 		    		return num>0 && num<=2100 && num % 4 == 0;		
-		    	}catch (NumberFormatException e) {
-		    		throw new NumberFormatException(); 
-		    	}
+				}catch (NumberFormatException ignored) {
+					throw new NumberFormatException(); 
+				}
 		    }
  		}catch(NullPointerException e) {
 			throw new NullPointerException();
