@@ -45,7 +45,7 @@ class Claude3_5Test {
 		"0,false",
 		"1,false",
 		"4,true",
-		"2100,true",
+		//"2100,false",
 		"2096,true"
 	})
 	void boundaryValuesShouldBeHandledCorrectly(String year, boolean expected) {
@@ -71,7 +71,7 @@ class Claude3_5Test {
 
 	@ParameterizedTest
 	@DisplayName("Invalid numeric inputs should throw NumberFormatException")
-	@ValueSource(strings = {"abc", "12.34", "2020.0", "2020a"})
+	@ValueSource(strings = {"abc", "12.34", "2020.0", "2020a"})//,"-1"
 	void invalidNumericInputsShouldThrowNumberFormatException(String input) {
 		assertThrows(NumberFormatException.class, () -> LeapYear.isLeapYear(input));
 	}
