@@ -3,14 +3,15 @@ package isleapyear;
 public class LeapYear {
 
 	/**
-	 * The function consists in if the string is any leap year between 0 and 2100,
-	 * but the year 0 will be false.
-     * @param a string.
-     * @return Returns a boolean.
-     * @throws NullPointerException When the string is null.
-     * @throws EmptyException When the string is empty.
-     * @throws NumberFormatException When the value of the string is not a integer.
-     */
+ * Checks if the given string represents a valid leap year between 1 and 2100 (inclusive).
+ * The year 0 is explicitly considered not a leap year.
+ *
+ * @param year The string representing the year to check.
+ * @return {@code true} if the year is a leap year within the specified range, {@code false} otherwise.
+ * @throws NullPointerException If the input string {@code year} is {@code null}.
+ * @throws EmptyException If the input string {@code year} is empty.
+ * @throws NumberFormatException If the input string {@code year} cannot be parsed as an integer.
+ */
 	public static boolean isLeapYear(String year) throws NullPointerException, EmptyException, NumberFormatException{
 		try {
 			if (year.isEmpty()) {
