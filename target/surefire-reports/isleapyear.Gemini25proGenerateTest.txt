@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: isleapyear.Chatgpt4oTest
+Test set: isleapyear.Gemini25proGenerateTest
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.653 s -- in isleapyear.Chatgpt4oTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.236 s -- in isleapyear.Gemini25proGenerateTest
