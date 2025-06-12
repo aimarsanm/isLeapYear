@@ -79,7 +79,7 @@ class GPT4oGenerateTest {
 	@DisplayName("Test invalid non-numeric input")
 	void testNonNumericInput() {
 		assertThrows(NumberFormatException.class, () -> LeapYear.isLeapYear("abcd"));
-	} 
+	}
 
 	@Test
 	@DisplayName("Test null input throws NullPointerException")
