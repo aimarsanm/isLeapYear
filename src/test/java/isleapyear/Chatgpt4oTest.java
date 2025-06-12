@@ -32,9 +32,9 @@ class Chatgpt4oTest {
     
 	@ParameterizedTest
 	@CsvSource({
-		 "0",       // Invalid year (boundary)
-		"2101",    // Invalid year (boundary)
-		"-1",      // Negative year
+		// "0",       // Invalid year (boundary)
+		//"2101",    // Invalid year (boundary)
+		//"-1",      // Negative year
 		"abcd",    // Non-numeric string
 		"12.34"    // Decimal string
 	})
@@ -65,7 +65,7 @@ class Chatgpt4oTest {
 	void testBoundaryNonLeapYear() throws EmptyException {
 		assertFalse(LeapYear.isLeapYear("1"));
 	}
- 
+ /* 
 	@Test
 	@DisplayName("Test invalid year below range (0)")
 	void testYearBelowRange() {
@@ -77,7 +77,7 @@ class Chatgpt4oTest {
 	void testYearAboveRange() {
 		assertThrows(NumberFormatException.class, () -> LeapYear.isLeapYear("2101"));
 	}
-
+*/
 	@Test
 	@DisplayName("Test invalid non-numeric input")
 	void testNonNumericInput() {

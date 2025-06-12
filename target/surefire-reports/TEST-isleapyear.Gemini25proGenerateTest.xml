@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="isleapyear.Gemini25proTest" time="0.106" tests="21" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="isleapyear.Gemini25proGenerateTest" time="0.044" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -59,25 +59,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="testBoundaryValues(String, boolean)[1]" classname="isleapyear.Gemini25proTest" time="0.012"/>
-  <testcase name="testBoundaryValues(String, boolean)[2]" classname="isleapyear.Gemini25proTest" time="0.003"/>
-  <testcase name="testBoundaryValues(String, boolean)[3]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testBoundaryValues(String, boolean)[4]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[1]" classname="isleapyear.Gemini25proTest" time="0.006"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[2]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[3]" classname="isleapyear.Gemini25proTest" time="0.002"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[4]" classname="isleapyear.Gemini25proTest" time="0.003"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[5]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[6]" classname="isleapyear.Gemini25proTest" time="0.002"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[7]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[8]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testValidLeapYears(String, boolean)[1]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testValidLeapYears(String, boolean)[2]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testValidLeapYears(String, boolean)[3]" classname="isleapyear.Gemini25proTest" time="0.002"/>
-  <testcase name="testValidLeapYears(String, boolean)[4]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testNonLeapYears(String, boolean)[1]" classname="isleapyear.Gemini25proTest" time="0.002"/>
-  <testcase name="testNonLeapYears(String, boolean)[2]" classname="isleapyear.Gemini25proTest" time="0.002"/>
-  <testcase name="testInvalidInputs(String, String)[1]" classname="isleapyear.Gemini25proTest" time="0.005"/>
-  <testcase name="testInvalidInputs(String, String)[2]" classname="isleapyear.Gemini25proTest" time="0.003"/>
-  <testcase name="testInvalidInputs(String, String)[3]" classname="isleapyear.Gemini25proTest" time="0.003"/>
+  <testcase name="isLeapYear_whenYearIsLargeNumberString_shouldThrowNumberFormatExceptionOrReturnFalse" classname="isleapyear.Gemini25proGenerateTest" time="0.005"/>
+  <testcase name="isLeapYear_whenYearIsNull_shouldThrowNullPointerException" classname="isleapyear.Gemini25proGenerateTest" time="0.002"/>
+  <testcase name="isLeapYear_whenYearIsOutOfUpperRange_shouldReturnFalse" classname="isleapyear.Gemini25proGenerateTest" time="0.002"/>
+  <testcase name="isLeapYear_whenYearIsValidNonLeapYear_shouldReturnFalse" classname="isleapyear.Gemini25proGenerateTest" time="0.001"/>
+  <testcase name="isLeapYear_whenYearIsNotNumeric_shouldThrowNumberFormatException" classname="isleapyear.Gemini25proGenerateTest" time="0.004"/>
+  <testcase name="isLeapYear_whenYearIsOutOfLowerRange_shouldReturnFalse" classname="isleapyear.Gemini25proGenerateTest" time="0.001"/>
+  <testcase name="isLeapYear_whenYearIsValidLeapYear_shouldReturnTrue" classname="isleapyear.Gemini25proGenerateTest" time="0.001"/>
+  <testcase name="isLeapYear_whenYearIsEmpty_shouldThrowEmptyException" classname="isleapyear.Gemini25proGenerateTest" time="0.002"/>
 </testsuite>
