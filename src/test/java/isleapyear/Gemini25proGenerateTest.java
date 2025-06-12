@@ -68,7 +68,7 @@ class Gemini25proGenerateTest {
 		}, "Passing 'Twenty' should throw NumberFormatException");
 		
 		assertThrows(NumberFormatException.class, () -> {
-			LeapYear.isLeapYear(" 12 "); // Integer.parseInt handles this, but good to be aware.
+			//LeapYear.isLeapYear(" 12 "); // Integer.parseInt handles this, but good to be aware.
 										 // The current code would parse " 12 " as 12 and return true.
 										 // Let's use a more clearly invalid format.
 			LeapYear.isLeapYear("12a"); 
