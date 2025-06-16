@@ -13,6 +13,7 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 
 
 class GPT4oGenerateTest {
+	LeapYear leapYear = new LeapYear();
 
 	@ParameterizedTest
 	@CsvSource({
@@ -24,7 +25,7 @@ class GPT4oGenerateTest {
 	})
 	@DisplayName("Test valid leap years and non-leap years")
 	void testValidYears(String year, boolean expected) throws EmptyException {
-		assertEquals(expected, LeapYear.isLeapYear(year));
+		assertEquals(expected, leapYear.isLeapYear(year));
 	}
 
 	@ParameterizedTest
@@ -37,7 +38,7 @@ class GPT4oGenerateTest {
 	})
 	@DisplayName("Test invalid numeric and non-numeric inputs")
 	void testInvalidInputs(String year) {
-		assertThrows(NumberFormatException.class, () -> LeapYear.isLeapYear(year));
+		assertThrows(NumberFormatException.class, () -> leapYear.isLeapYear(year));
 	}
 
 	@ParameterizedTest
@@ -45,22 +46,22 @@ class GPT4oGenerateTest {
 	@DisplayName("Test null and empty string inputs")
 	void testNullAndEmptyInputs(String year) {
 		if (year == null) {
-			assertThrows(NullPointerException.class, () -> LeapYear.isLeapYear(year));
+			assertThrows(NullPointerException.class, () -> leapYear.isLeapYear(year));
 		} else {
-			assertThrows(EmptyException.class, () -> LeapYear.isLeapYear(year));
+			assertThrows(EmptyException.class, () -> leapYear.isLeapYear(year));
 		}
 	}
 
 	@Test
 	@DisplayName("Test valid leap year at boundary (2100)")
 	void testBoundaryLeapYear() throws EmptyException {
-		assertTrue(LeapYear.isLeapYear("2100"));
+		assertTrue(leapYear.isLeapYear("2100"));
 	}
 
 	@Test
 	@DisplayName("Test valid non-leap year at boundary (1)")
 	void testBoundaryNonLeapYear() throws EmptyException {
-		assertFalse(LeapYear.isLeapYear("1"));
+		assertFalse(leapYear.isLeapYear("1"));
 	}
 /* 
 	@Test
@@ -78,18 +79,18 @@ class GPT4oGenerateTest {
 	@Test
 	@DisplayName("Test invalid non-numeric input")
 	void testNonNumericInput() {
-		assertThrows(NumberFormatException.class, () -> LeapYear.isLeapYear("abcd"));
+		assertThrows(NumberFormatException.class, () -> leapYear.isLeapYear("abcd"));
 	}
 
 	@Test
 	@DisplayName("Test null input throws NullPointerException")
 	void testNullInput() {
-		assertThrows(NullPointerException.class, () -> LeapYear.isLeapYear(null));
+		assertThrows(NullPointerException.class, () -> leapYear.isLeapYear(null));
 	}
 
 	@Test
 	@DisplayName("Test empty input throws EmptyException")
 	void testEmptyInput() {
-		assertThrows(EmptyException.class, () -> LeapYear.isLeapYear(""));
+		assertThrows(EmptyException.class, () -> leapYear.isLeapYear(""));
 	}
 }

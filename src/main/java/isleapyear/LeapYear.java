@@ -12,7 +12,7 @@ public class LeapYear {
  * @throws EmptyException If the input string {@code year} is empty.
  * @throws NumberFormatException If the input string {@code year} cannot be parsed as an integer.
  */
-	public static boolean isLeapYear(String year) throws NullPointerException, EmptyException, NumberFormatException{
+	public boolean isLeapYear(String year) throws NullPointerException, EmptyException, NumberFormatException{
 		try {
 			if (year.isEmpty()) {
 		        throw new EmptyException();

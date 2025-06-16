@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 class Gemini25proGenerateTest {
+	LeapYear LeapYear = new LeapYear();
 
 	@Test
 	void isLeapYear_whenYearIsValidLeapYear_shouldReturnTrue() throws Exception {

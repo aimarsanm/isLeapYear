@@ -15,6 +15,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 
 class Gemini25proTest {
+	LeapYear LeapYear = new LeapYear();
 
 	@BeforeEach
 	void setUp() {

@@ -14,13 +14,13 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 
 class Claude3_5Test {
-	
+	LeapYear leapYear = new LeapYear();
 	@ParameterizedTest
 	@DisplayName("Valid leap years should return true")
 	@ValueSource(strings = {"4", "2000", "2020", "2096"})
 	void validLeapYearsShouldReturnTrue(String year) {
 		try {
-			boolean result = LeapYear.isLeapYear(year);
+			boolean result = leapYear.isLeapYear(year);
 			assertEquals(true, result, () -> year + " should be a leap year");
 		} catch (Exception e) {
 			fail("Should not throw exception for valid leap year: " + year);
@@ -32,7 +32,7 @@ class Claude3_5Test {
 	@ValueSource(strings = {"1", "2001", "2019", "2023"})
 	void validNonLeapYearsShouldReturnFalse(String year) {
 		try {
-			boolean result = LeapYear.isLeapYear(year);
+			boolean result = leapYear.isLeapYear(year);
 			assertEquals(false, result, () -> year + " should not be a leap year");
 		} catch (Exception e) {
 			fail("Should not throw exception for valid non-leap year: " + year);
@@ -50,7 +50,7 @@ class Claude3_5Test {
 	})
 	void boundaryValuesShouldBeHandledCorrectly(String year, boolean expected) {
 		try {
-			boolean result = LeapYear.isLeapYear(year);
+			boolean result = leapYear.isLeapYear(year);
 			assertEquals(expected, result, () -> year + " should return " + expected);
 		} catch (Exception e) {
 			fail("Should not throw exception for boundary value: " + year);
@@ -60,20 +60,20 @@ class Claude3_5Test {
 	@Test
 	@DisplayName("Null input should throw NullPointerException")
 	void nullInputShouldThrowNullPointerException() {
-		assertThrows(NullPointerException.class, () -> LeapYear.isLeapYear(null));
+		assertThrows(NullPointerException.class, () -> leapYear.isLeapYear(null));
 	}
 
 	@Test
 	@DisplayName("Empty input should throw EmptyException")
 	void emptyInputShouldThrowEmptyException() {
-		assertThrows(EmptyException.class, () -> LeapYear.isLeapYear(""));
+		assertThrows(EmptyException.class, () -> leapYear.isLeapYear(""));
 	}
 
 	@ParameterizedTest
 	@DisplayName("Invalid numeric inputs should throw NumberFormatException")
 	@ValueSource(strings = {"abc", "12.34", "2020.0", "2020a"})//,"-1"
 	void invalidNumericInputsShouldThrowNumberFormatException(String input) {
-		assertThrows(NumberFormatException.class, () -> LeapYear.isLeapYear(input));
+		assertThrows(NumberFormatException.class, () -> leapYear.isLeapYear(input));
 	}
 
 	@ParameterizedTest
@@ -81,7 +81,7 @@ class Claude3_5Test {
 	@ValueSource(strings = {"2101", "3000"})
 	void yearsOutsideRangeShouldReturnFalse(String year) {
 		try {
-			boolean result = LeapYear.isLeapYear(year);
+			boolean result = leapYear.isLeapYear(year);
 			assertEquals(false, result, () -> year + " should return false as it's outside valid range");
 		} catch (Exception e) {
 			fail("Should not throw exception for year outside range: " + year);

@@ -16,6 +16,7 @@ import org.junit.jupiter.params.provider.NullAndEmptySource;
 
 
 class Chatgpt4oTest {
+		LeapYear LeapYear = new LeapYear();
 
 	@ParameterizedTest
 	@CsvSource({
