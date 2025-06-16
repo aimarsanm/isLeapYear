@@ -1,128 +1,98 @@
 package isleapyear;
 
-import java.util.stream.Stream;
-
-import org.junit.jupiter.api.AfterEach;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+/**
+ * Test class for {@link LeapYear}.
+ * Utilizes White Box (Condition/Decision Coverage) and Black Box (Equivalence Partitioning, Boundary Value Analysis)
+ * testing methods.
+ */
 class Gemini25proTest {
-	LeapYear LeapYear = new LeapYear();
 
-	@BeforeEach
-	void setUp() {
-		// Setup code if needed
-	}
+    private LeapYear leapYear;
 
-	@AfterEach
-	void tearDown() {
-		// Cleanup code if needed
-	}
+    @BeforeEach
+    void setUp() {
+        leapYear = new LeapYear();
+    }
 
-	@DisplayName("Test valid leap years")
-	@ParameterizedTest
-	@CsvSource({
-		"4, true",
-		"2000, true",
-		"8, true",
-		"400, true"
-	})
-	void testValidLeapYears(String year, boolean expected) {
-		try {
-			assertEquals(expected, LeapYear.isLeapYear(year));
-		} catch (Exception e) {
-			fail("Unexpected exception: " + e.getMessage());
-		}
-	}
+    @Test
+    @DisplayName("Test isLeapYear with null input, should throw NullPointerException")
+    void testIsLeapYear_NullInput_ShouldThrowNullPointerException() {
+        assertThrows(NullPointerException.class, () -> {
+            leapYear.isLeapYear(null);
+        }, "Calling isLeapYear with null should throw NullPointerException.");
+    }
 
-	@DisplayName("Test non-leap years")
-	@ParameterizedTest
-	@CsvSource({
-		"1, false",
-		"2101, false"//,
-		//"100, false",
-		//"1900, false"
-	})
-	void testNonLeapYears(String year, boolean expected) {
-		try {
-			assertEquals(expected, LeapYear.isLeapYear(year));
-		} catch (Exception e) {
-			fail("Unexpected exception: " + e.getMessage());
-		}
-	}
+    @Test
+    @DisplayName("Test isLeapYear with empty string input, should throw EmptyException")
+    void testIsLeapYear_EmptyInput_ShouldThrowEmptyException() {
+        assertThrows(EmptyException.class, () -> {
+            leapYear.isLeapYear("");
+        }, "Calling isLeapYear with an empty string should throw EmptyException.");
+    }
 
-	@DisplayName("Test invalid inputs")
-	@ParameterizedTest
-	@CsvSource({
-		"'', EmptyException",
-		"null, NullPointerException",
-		"abc, NumberFormatException"//,
-		//"-1, NumberFormatException"
-	})
-	void testInvalidInputs(String year, String expectedException) {
-		try {
-			if (year == null) {
-				assertThrows(NullPointerException.class, () -> LeapYear.isLeapYear(year));
-			} else if (year.isEmpty()) {
-				assertThrows(EmptyException.class, () -> LeapYear.isLeapYear(year));
-			} else {
-				assertThrows(NumberFormatException.class, () -> LeapYear.isLeapYear(year));
-			}
-		} catch (Exception e) {
-			fail("Unexpected exception: " + e.getMessage());
-		}
-	}
+    @ParameterizedTest
+    @ValueSource(strings = {"abc", "12.3", "  ", "Twenty", "1,000", "42L", "NaN", "Infinity", " 2000 "})
+    @DisplayName("Test isLeapYear with various non-numeric string inputs, should throw NumberFormatException")
+    void testIsLeapYear_NonNumericInput_ShouldThrowNumberFormatException(String invalidYear) {
+        assertThrows(NumberFormatException.class, () -> {
+            leapYear.isLeapYear(invalidYear);
+        }, "Calling isLeapYear with non-numeric string '" + invalidYear + "' should throw NumberFormatException.");
+    }
 
-	@DisplayName("Test boundary values")
-	@ParameterizedTest
-	@CsvSource({
-		"1, false",
-		"2100, true",
-		"0, false",
-		"2101, false"
-	})
-	void testBoundaryValues(String year, boolean expected) {
-		try {
-			assertEquals(expected, LeapYear.isLeapYear(year));
-		} catch (Exception e) {
-			fail("Unexpected exception: " + e.getMessage());
-		}
-	}
+    @ParameterizedTest
+    @MethodSource("provideLeapYearTestData")
+    @DisplayName("Test isLeapYear with various numeric inputs for boolean outcomes")
+    void testIsLeapYear_BooleanOutcomes(String year, boolean expectedResult) {
+        try {
+            boolean actualResult = leapYear.isLeapYear(year);
+            assertEquals(expectedResult, actualResult,
+                    "Year '" + year + "' evaluation did not match expected: " + expectedResult);
+        } catch (Exception e) {
+            fail("Test for year '" + year + "' failed due to unexpected exception: " + e.getMessage(), e);
+        }
+    }
 
-	@DisplayName("Test all condition/decision combinations")
-	@ParameterizedTest
-	@MethodSource("provideConditionDecisionCases")
-	void testConditionDecisionCoverage(String year, boolean expected, Class<? extends Exception> expectedException) {
-		try {
-			if (expectedException != null) {
-				assertThrows(expectedException, () -> LeapYear.isLeapYear(year));
-			} else {
-				assertEquals(expected, LeapYear.isLeapYear(year));
-			}
-		} catch (Exception e) {
-			fail("Unexpected exception: " + e.getMessage());
-		}
-	}
+    private static Stream<Arguments> provideLeapYearTestData() {
+        return Stream.of(
+                // MCDC Cases & Core Logic
+                Arguments.of("2000", true),  // C1=T, C2=T, C3=T -> True (Leap year)
+                Arguments.of("0", false),    // C1=F (num > 0 is false) -> False
+                Arguments.of("2104", false), // C2=F (num <= 2100 is false) -> False
+                Arguments.of("2001", false), // C3=F (num % 4 == 0 is false) -> False
 
-	static Stream<Arguments> provideConditionDecisionCases() {
-		return Stream.of(
-			Arguments.of(null, false, NullPointerException.class),
-			Arguments.of("", false, EmptyException.class),
-			Arguments.of("abc", false, NumberFormatException.class),
-			//Arguments.of("-1", false, NumberFormatException.class),
-			Arguments.of("0", false, null),
-			Arguments.of("1", false, null),
-			Arguments.of("4", true, null),
-			Arguments.of("2100", true, null),
-			Arguments.of("2101", false, null)
-		);
-	}
+                // Boundary Value Analysis for num > 0
+                Arguments.of("1", false),    // Lower boundary (1 > 0 is T, 1 % 4 != 0)
+                Arguments.of("-1", false),   // Below lower boundary (num > 0 is F)
+                Arguments.of("-4", false),   // Negative, divisible by 4 (num > 0 is F)
+
+                // Boundary Value Analysis for num <= 2100
+                Arguments.of("2100", true),  // Upper boundary, leap (2100 % 4 == 0)
+                Arguments.of("2099", false), // Below upper boundary, not leap (2099 % 4 != 0)
+                Arguments.of("2101", false), // Above upper boundary (num <= 2100 is F)
+
+                // Equivalence Partitioning: Valid Leap Years
+                Arguments.of("1996", true),  // Typical leap year
+                Arguments.of("4", true),     // Smallest positive leap year
+
+                // Equivalence Partitioning: Valid Non-Leap Years within range
+                Arguments.of("1997", false), // Typical non-leap year
+                Arguments.of("3", false),    // Small positive non-leap year
+
+                // Additional cases for robustness
+                Arguments.of("+100", true),  // Parsable positive with sign
+                Arguments.of("-50", false)   // Parsable negative
+        );
+    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="isleapyear.Gemini25proTest" time="0.106" tests="21" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="isleapyear.Gemini25proTest" time="0.338" tests="27" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Users\a.sanmartin\Desktop\IsLeapYearVisual\java open jdk\Oracle_JDK-24\bin"/>
-    <property name="sun.java.command" value="C:\Users\a.sanmartin\AppData\Local\Temp\surefire6882533921213063853\surefirebooter-20250612114130427_3.jar C:\Users\a.sanmartin\AppData\Local\Temp\surefire6882533921213063853 2025-06-12T11-41-30_311-jvmRun1 surefire-20250612114130427_1tmp surefire_0-20250612114130427_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\a.sanmartin\AppData\Local\Temp\surefire424526706914976791\surefirebooter-20250616163257440_3.jar C:\Users\a.sanmartin\AppData\Local\Temp\surefire424526706914976791 2025-06-16T16-32-57_286-jvmRun1 surefire-20250616163257440_1tmp surefire_0-20250616163257440_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\a.sanmartin\Desktop\IsLeapYearVisual\isLeapYear\target\test-classes;C:\Users\a.sanmartin\Desktop\IsLeapYearVisual\isLeapYear\target\classes;C:\Users\a.sanmartin\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.13.0\junit-jupiter-api-5.13.0.jar;C:\Users\a.sanmartin\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\a.sanmartin\.m2\repository\org\junit\platform\junit-platform-commons\1.13.0\junit-platform-commons-1.13.0.jar;C:\Users\a.sanmartin\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\a.sanmartin\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.13.0\junit-jupiter-params-5.13.0.jar;C:\Users\a.sanmartin\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.13.0\junit-jupiter-engine-5.13.0.jar;C:\Users\a.sanmartin\.m2\repository\org\junit\platform\junit-platform-engine\1.13.0\junit-platform-engine-1.13.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,13 +30,12 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\a.sanmartin\AppData\Local\Temp\surefire6882533921213063853\surefirebooter-20250612114130427_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\a.sanmartin\AppData\Local\Temp\surefire424526706914976791\surefirebooter-20250616163257440_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="24.0.1+9-30"/>
     <property name="user.name" value="a.sanmartin"/>
     <property name="stdout.encoding" value="Cp1252"/>
-    <property name="sonar" value="true"/>
     <property name="path.separator" value=";"/>
     <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -59,25 +58,31 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="testBoundaryValues(String, boolean)[1]" classname="isleapyear.Gemini25proTest" time="0.012"/>
-  <testcase name="testBoundaryValues(String, boolean)[2]" classname="isleapyear.Gemini25proTest" time="0.003"/>
-  <testcase name="testBoundaryValues(String, boolean)[3]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testBoundaryValues(String, boolean)[4]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[1]" classname="isleapyear.Gemini25proTest" time="0.006"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[2]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[3]" classname="isleapyear.Gemini25proTest" time="0.002"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[4]" classname="isleapyear.Gemini25proTest" time="0.003"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[5]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[6]" classname="isleapyear.Gemini25proTest" time="0.002"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[7]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testConditionDecisionCoverage(String, boolean, Class)[8]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testValidLeapYears(String, boolean)[1]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testValidLeapYears(String, boolean)[2]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testValidLeapYears(String, boolean)[3]" classname="isleapyear.Gemini25proTest" time="0.002"/>
-  <testcase name="testValidLeapYears(String, boolean)[4]" classname="isleapyear.Gemini25proTest" time="0.001"/>
-  <testcase name="testNonLeapYears(String, boolean)[1]" classname="isleapyear.Gemini25proTest" time="0.002"/>
-  <testcase name="testNonLeapYears(String, boolean)[2]" classname="isleapyear.Gemini25proTest" time="0.002"/>
-  <testcase name="testInvalidInputs(String, String)[1]" classname="isleapyear.Gemini25proTest" time="0.005"/>
-  <testcase name="testInvalidInputs(String, String)[2]" classname="isleapyear.Gemini25proTest" time="0.003"/>
-  <testcase name="testInvalidInputs(String, String)[3]" classname="isleapyear.Gemini25proTest" time="0.003"/>
+  <testcase name="testIsLeapYear_NonNumericInput_ShouldThrowNumberFormatException(String)[1]" classname="isleapyear.Gemini25proTest" time="0.088"/>
+  <testcase name="testIsLeapYear_NonNumericInput_ShouldThrowNumberFormatException(String)[2]" classname="isleapyear.Gemini25proTest" time="0.002"/>
+  <testcase name="testIsLeapYear_NonNumericInput_ShouldThrowNumberFormatException(String)[3]" classname="isleapyear.Gemini25proTest" time="0.003"/>
+  <testcase name="testIsLeapYear_NonNumericInput_ShouldThrowNumberFormatException(String)[4]" classname="isleapyear.Gemini25proTest" time="0.002"/>
+  <testcase name="testIsLeapYear_NonNumericInput_ShouldThrowNumberFormatException(String)[5]" classname="isleapyear.Gemini25proTest" time="0.001"/>
+  <testcase name="testIsLeapYear_NonNumericInput_ShouldThrowNumberFormatException(String)[6]" classname="isleapyear.Gemini25proTest" time="0.002"/>
+  <testcase name="testIsLeapYear_NonNumericInput_ShouldThrowNumberFormatException(String)[7]" classname="isleapyear.Gemini25proTest" time="0.001"/>
+  <testcase name="testIsLeapYear_NonNumericInput_ShouldThrowNumberFormatException(String)[8]" classname="isleapyear.Gemini25proTest" time="0.002"/>
+  <testcase name="testIsLeapYear_NonNumericInput_ShouldThrowNumberFormatException(String)[9]" classname="isleapyear.Gemini25proTest" time="0.002"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[1]" classname="isleapyear.Gemini25proTest" time="0.01"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[2]" classname="isleapyear.Gemini25proTest" time="0.001"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[3]" classname="isleapyear.Gemini25proTest" time="0.002"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[4]" classname="isleapyear.Gemini25proTest" time="0.003"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[5]" classname="isleapyear.Gemini25proTest" time="0.002"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[6]" classname="isleapyear.Gemini25proTest" time="0.001"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[7]" classname="isleapyear.Gemini25proTest" time="0.001"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[8]" classname="isleapyear.Gemini25proTest" time="0.002"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[9]" classname="isleapyear.Gemini25proTest" time="0.001"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[10]" classname="isleapyear.Gemini25proTest" time="0.002"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[11]" classname="isleapyear.Gemini25proTest" time="0.001"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[12]" classname="isleapyear.Gemini25proTest" time="0.003"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[13]" classname="isleapyear.Gemini25proTest" time="0.001"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[14]" classname="isleapyear.Gemini25proTest" time="0.001"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[15]" classname="isleapyear.Gemini25proTest" time="0.002"/>
+  <testcase name="testIsLeapYear_BooleanOutcomes(String, boolean)[16]" classname="isleapyear.Gemini25proTest" time="0.001"/>
+  <testcase name="testIsLeapYear_EmptyInput_ShouldThrowEmptyException" classname="isleapyear.Gemini25proTest" time="0.003"/>
+  <testcase name="testIsLeapYear_NullInput_ShouldThrowNullPointerException" classname="isleapyear.Gemini25proTest" time="0.002"/>
 </testsuite>
