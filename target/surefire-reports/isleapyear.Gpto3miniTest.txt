@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: isleapyear.GenerateSonnet37Test
+Test set: isleapyear.Gpto3miniTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.158 s -- in isleapyear.GenerateSonnet37Test
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.472 s -- in isleapyear.Gpto3miniTest
