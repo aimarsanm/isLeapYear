@@ -1,2 +1,6 @@
+pruebas\IsPrime.class
+pruebas\NoPositiveNumberException.class
+pruebas\MissingArgumentException.class
 isleapyear\EmptyException.class
+pruebas\Only1ArgumentException.class
 isleapyear\LeapYear.class
