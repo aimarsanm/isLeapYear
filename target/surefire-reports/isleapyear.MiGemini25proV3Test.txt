@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: isleapyear.MiGemini25proTest
+Test set: isleapyear.MiGemini25proV3Test
 -------------------------------------------------------------------------------
-Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.336 s -- in isleapyear.MiGemini25proTest
+Tests run: 39, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.629 s -- in isleapyear.MiGemini25proV3Test
