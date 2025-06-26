@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: isleapyear.GPT4oTest
+Test set: isleapyear.Gemini25propreTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.396 s -- in isleapyear.GPT4oTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.509 s -- in isleapyear.Gemini25propreTest
