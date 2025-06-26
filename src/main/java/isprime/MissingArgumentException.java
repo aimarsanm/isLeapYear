@@ -1,4 +1,4 @@
-package pruebas;
+package isprime;
 
 public class MissingArgumentException extends Exception {
 

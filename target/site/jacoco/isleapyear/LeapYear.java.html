@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LeapYear.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">isleapyear</a> &gt; <span class="el_source">LeapYear.java</span></div><h1>LeapYear.java</h1><pre class="source lang-java linenums">package isleapyear;
 
-<span class="fc" id="L3">public class LeapYear {</span>
+<span class="nc" id="L3">public class LeapYear {</span>
 
 	/**
  * Checks if the given string represents a valid leap year between 1 and 2100 (inclusive).
@@ -14,18 +14,18 @@
  */
 	public boolean isLeapYear(String year) throws NullPointerException, EmptyException, NumberFormatException{
 		try {
-<span class="fc bfc" id="L17" title="All 2 branches covered.">			if (year.isEmpty()) {</span>
-<span class="fc" id="L18">		        throw new EmptyException();</span>
+<span class="nc bnc" id="L17" title="All 2 branches missed.">			if (year.isEmpty()) {</span>
+<span class="nc" id="L18">		        throw new EmptyException();</span>
 		    }else {
 		    	try {
-<span class="fc" id="L21">		    		int num= Integer.parseInt(year);</span>
-<span class="fc bfc" id="L22" title="All 6 branches covered.">		    		return num&gt;0 &amp;&amp; num&lt;=2100 &amp;&amp; num % 4 == 0;		</span>
-<span class="fc" id="L23">				}catch (NumberFormatException ignored) {</span>
-<span class="fc" id="L24">					throw new NumberFormatException(); </span>
+<span class="nc" id="L21">		    		int num= Integer.parseInt(year);</span>
+<span class="nc bnc" id="L22" title="All 6 branches missed.">		    		return num&gt;0 &amp;&amp; num&lt;=2100 &amp;&amp; num % 4 == 0;		</span>
+<span class="nc" id="L23">				}catch (NumberFormatException ignored) {</span>
+<span class="nc" id="L24">					throw new NumberFormatException(); </span>
 				}
 		    }
-<span class="fc" id="L27"> 		}catch(NullPointerException e) {</span>
-<span class="fc" id="L28">			throw new NullPointerException();</span>
+<span class="nc" id="L27"> 		}catch(NullPointerException e) {</span>
+<span class="nc" id="L28">			throw new NullPointerException();</span>
 			
 		}
 			

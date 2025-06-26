@@ -1,4 +1,4 @@
-package pruebas;
+package isprime;
 
 public class Only1ArgumentException extends Exception {
 

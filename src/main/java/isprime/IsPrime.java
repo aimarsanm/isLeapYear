@@ -1,9 +1,6 @@
-package pruebas;
+package isprime;
 
 public class IsPrime {
-    public IsPrime() {
-        // Default constructor
-    }
     /**
      * @param args Set of strings consisting of integers.
      * @return Returns whether the numbers in args are all prime or not.

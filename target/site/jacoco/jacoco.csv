@@ -1,7 +1,7 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-demo,pruebas,MissingArgumentException,4,0,0,0,2,0,1,0,1,0
-demo,pruebas,NoPositiveNumberException,4,0,0,0,2,0,1,0,1,0
-demo,pruebas,IsPrime,51,0,10,0,16,0,7,0,2,0
-demo,pruebas,Only1ArgumentException,4,0,0,0,2,0,1,0,1,0
-demo,isleapyear,LeapYear,0,36,0,8,0,9,0,6,0,2
-demo,isleapyear,EmptyException,0,4,0,0,0,2,0,1,0,1
+demo,isleapyear,LeapYear,36,0,8,0,9,0,6,0,2,0
+demo,isleapyear,EmptyException,4,0,0,0,2,0,1,0,1,0
+demo,isprime,IsPrime,3,48,0,10,1,14,1,6,1,1
+demo,isprime,MissingArgumentException,0,4,0,0,0,2,0,1,0,1
+demo,isprime,Only1ArgumentException,0,4,0,0,0,2,0,1,0,1
+demo,isprime,NoPositiveNumberException,0,4,0,0,0,2,0,1,0,1
