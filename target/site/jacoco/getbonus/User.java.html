@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>User.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">getbonus</a> &gt; <span class="el_source">User.java</span></div><h1>User.java</h1><pre class="source lang-java linenums">package getbonus;
+
+import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Vector;
+
+public class User {
+    private String id;
+    private String name;
+    private String telephone;
+<span class="nc" id="L12">    private List&lt;Purchase&gt; purchases = new Vector&lt;Purchase&gt;();</span>
+    private Purchase basket;
+
+    public User(String dni, String name, String telefono) {
+<span class="nc" id="L16">        super();</span>
+<span class="nc" id="L17">        this.id = dni;</span>
+<span class="nc" id="L18">        this.name = name;</span>
+<span class="nc" id="L19">        this.telephone = telefono;</span>
+<span class="nc" id="L20">        purchases = new Vector&lt;Purchase&gt;();</span>
+<span class="nc" id="L21">    }</span>
+
+    public String getName() {
+<span class="nc" id="L24">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L28">        this.name = name;</span>
+<span class="nc" id="L29">    }</span>
+
+    public String getId() {
+<span class="nc" id="L32">        return id;</span>
+    }
+
+    public void setId(String id) {
+<span class="nc" id="L36">        this.id = id;</span>
+<span class="nc" id="L37">    }</span>
+
+    public String getTelephone() {
+<span class="nc" id="L40">        return telephone;</span>
+    }
+
+    public void setTelephone(String telephone) {
+<span class="nc" id="L44">        this.telephone = telephone;</span>
+<span class="nc" id="L45">    }</span>
+
+    public Iterator&lt;Purchase&gt; getPurchases(Date firstDate, Date lastDate) {
+<span class="nc" id="L48">        List&lt;Purchase&gt; cs = new Vector&lt;Purchase&gt;();</span>
+<span class="nc" id="L49">        System.out.println(&quot;#of purchases &quot; + purchases.size());</span>
+<span class="nc bnc" id="L50" title="All 2 branches missed.">        for (Purchase c : purchases) {</span>
+<span class="nc bnc" id="L51" title="All 4 branches missed.">            if ((c.getPurchasedDate().compareTo(firstDate) &gt;= 0) &amp;&amp; (c.getPurchasedDate().compareTo(lastDate) &lt;= 0))</span>
+<span class="nc" id="L52">                cs.add(c);</span>
+<span class="nc" id="L53">        }</span>
+<span class="nc" id="L54">        return cs.iterator();</span>
+    }
+
+    public void buy(Date d) {
+<span class="nc" id="L58">        basket.setPurchasedDate(d);</span>
+<span class="nc" id="L59">        purchases.add(basket);</span>
+<span class="nc" id="L60">        basket = null;</span>
+<span class="nc" id="L61">    }</span>
+
+    public void addBasket(Article a, int cantidad) {
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        if (basket == null)</span>
+<span class="nc" id="L65">            basket = new Purchase();</span>
+<span class="nc" id="L66">        basket.addBasket(a, cantidad);</span>
+<span class="nc" id="L67">    }</span>
+
+    public String toString() {
+<span class="nc" id="L70">        return id + &quot; &quot; + &quot; &quot; + name + &quot; &quot; + telephone;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

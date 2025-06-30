@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PurchasedArticle.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">getbonus</a> &gt; <span class="el_source">PurchasedArticle.java</span></div><h1>PurchasedArticle.java</h1><pre class="source lang-java linenums">package getbonus;
+
+public class PurchasedArticle {
+    private Article art;
+    private int quantity;
+    private float price;
+    private boolean isOutlet;
+
+    public PurchasedArticle(Article art, int quantity) {
+<span class="nc" id="L10">        super();</span>
+<span class="nc" id="L11">        this.art = art;</span>
+<span class="nc" id="L12">        this.quantity = quantity;</span>
+<span class="nc" id="L13">        this.price = art.getPrice();</span>
+<span class="nc" id="L14">        this.isOutlet = art.isOutlet();</span>
+<span class="nc" id="L15">    }</span>
+
+    public Article getArt() {
+<span class="nc" id="L18">        return art;</span>
+    }
+
+    public void setArt(Article art) {
+<span class="nc" id="L22">        this.art = art;</span>
+<span class="nc" id="L23">    }</span>
+
+    public int getQuantity() {
+<span class="nc" id="L26">        return quantity;</span>
+    }
+
+    public void setQuantity(int cantidad) {
+<span class="nc" id="L30">        this.quantity = cantidad;</span>
+<span class="nc" id="L31">    }</span>
+
+    public float getPrice() {
+<span class="nc" id="L34">        return price;</span>
+    }
+
+    public void setPrice(float precio) {
+<span class="nc" id="L38">        this.price = precio;</span>
+<span class="nc" id="L39">    }</span>
+
+    public boolean isOutlet() {
+<span class="nc" id="L42">        return isOutlet;</span>
+    }
+
+    public void setOutlet(boolean isOutlet) {
+<span class="nc" id="L46">        this.isOutlet = isOutlet;</span>
+<span class="nc" id="L47">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

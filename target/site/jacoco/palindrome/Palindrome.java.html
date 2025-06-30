@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Palindrome.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">palindrome</a> &gt; <span class="el_source">Palindrome.java</span></div><h1>Palindrome.java</h1><pre class="source lang-java linenums">package palindrome;
+
+
+
+/**
+ * Palindrome class contains methods to find the longest palindrome in a given a
+ * string.
+ * Source:
+ * https://code-exercises.com/programming/hard/4/longest-palindrome-in-word
+ */
+<span class="fc" id="L11">public class Palindrome {</span>
+
+    /**
+     * Find the longest palindrome in a given word.
+     * 
+     * @param word The word to find the longest palindrome in.
+     * @return The longest palindrome in the word.
+     */
+    public String findLongestPalindrome(String word) throws MissingArgumentException {
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        if (word == null) {</span>
+<span class="fc" id="L21">            throw new MissingArgumentException();</span>
+        }
+<span class="fc" id="L23">        String longestPalindrome = &quot;&quot;;</span>
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        for (int i = 0; i &lt; word.length(); i++) {</span>
+<span class="fc" id="L25">            String current = findLongestPalindromeInternal(word.substring(i, word.length()));</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">            if (longestPalindrome.length() &lt; current.length()) {</span>
+<span class="fc" id="L27">                longestPalindrome = current;</span>
+            }
+        }
+<span class="fc" id="L30">        return longestPalindrome;</span>
+    }
+
+    /**
+     * Find the longest palindrome in a given word.
+     * 
+     * @param word The word to find the longest palindrome in.
+     * @return The longest palindrome in the word.
+     */
+    public String findLongestPalindromeInternal(String word) throws MissingArgumentException {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (word == null) {</span>
+<span class="fc" id="L41">            throw new MissingArgumentException();</span>
+        }
+        String longestPalindrome;
+
+<span class="fc" id="L45">        int index = word.length();</span>
+<span class="fc bfc" id="L46" title="All 4 branches covered.">        while (index &gt; 0 &amp;&amp; !isPalindrome(word.substring(0, index))) {</span>
+<span class="fc" id="L47">            index--;</span>
+        }
+<span class="fc" id="L49">        longestPalindrome = word.substring(0, index);</span>
+
+<span class="fc" id="L51">        return longestPalindrome;</span>
+    }
+
+    /**
+     * Check if a word is a palindrome.
+     * 
+     * @param word
+     * @return
+     */
+    public boolean isPalindrome(String word) throws MissingArgumentException {
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (word == null) {</span>
+<span class="fc" id="L62">            throw new MissingArgumentException();</span>
+        }
+<span class="fc" id="L64">        int i1 = 0;</span>
+<span class="fc" id="L65">        int i2 = word.length() - 1;</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        while (i2 &gt; i1) {</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">            if (word.charAt(i1) != word.charAt(i2)) {</span>
+<span class="fc" id="L68">                return false;</span>
+            }
+<span class="fc" id="L70">            ++i1;</span>
+<span class="fc" id="L71">            --i2;</span>
+        }
+<span class="fc" id="L73">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

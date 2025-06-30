@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StrobogrammicNumber.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">isstrobogrammic</a> &gt; <span class="el_source">StrobogrammicNumber.java</span></div><h1>StrobogrammicNumber.java</h1><pre class="source lang-java linenums">package isstrobogrammic;
+
+import java.util.HashMap;
+import java.util.Map;
+
+<span class="nc" id="L6">public class StrobogrammicNumber {</span>
+    /**
+     * @param number The number to check if it is strobogrammic.
+     *               A strobogrammatic number is a number whose numeral is
+     *               rotationally symmetric, so that it appears the same when
+     *               rotated 180 degrees. In other words, the numeral looks the same
+     *               right-side up and upside down (e.g., 69, 96, 1001). A
+     *               strobogrammatic prime is a strobogrammatic number that is also
+     *               a prime number, i.e., a number that is only divisible by one
+     *               and itself (e.g., 11). It is a type of ambigram, words and
+     *               numbers that retain their meaning when viewed from a different
+     *               perspective, such as palindromes.
+     *               https://www.w3resource.com/java-exercises/basic/java-basic-exercise-186.php
+     * @return True if the number is strobogrammic.
+     */
+    public static boolean isStrobogrammic(String number) {
+        // Check for null or empty string
+<span class="nc bnc" id="L23" title="All 4 branches missed.">        if (number == null || number.length() == 0) {</span>
+<span class="nc" id="L24">            return true;</span>
+        }
+        // Create a HashMap to store Strobogrammatic pairs
+<span class="nc" id="L27">        Map&lt;Character, Character&gt; map = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L28">        map.put('0', '0');</span>
+<span class="nc" id="L29">        map.put('1', '1');</span>
+<span class="nc" id="L30">        map.put('8', '8');</span>
+<span class="nc" id="L31">        map.put('6', '9');</span>
+<span class="nc" id="L32">        map.put('9', '6');</span>
+        // Use two pointers to traverse the string from both ends
+<span class="nc" id="L34">        int left = 0;</span>
+<span class="nc" id="L35">        int right = number.length() - 1;</span>
+        // Continue until the left pointer is less than or equal to the right pointer
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        while (left &lt;= right) {</span>
+            // Check if the characters at the current positions are valid Strobogrammatic
+            // pairs
+<span class="nc bnc" id="L40" title="All 4 branches missed.">            if (!map.containsKey(number.charAt(right)) || number.charAt(left) != map.get(number.charAt(right))) {</span>
+<span class="nc" id="L41">                return false;</span>
+            }
+            // Move the pointers towards the center
+<span class="nc" id="L44">            left++;</span>
+<span class="nc" id="L45">            right--;</span>
+        }
+        // If the loop completes, the string is Strobogrammatic
+<span class="nc" id="L48">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

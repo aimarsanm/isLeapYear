@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Purchase.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">adduser</a> &gt; <span class="el_source">Purchase.java</span></div><h1>Purchase.java</h1><pre class="source lang-java linenums">    package adduser;
+
+
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+
+<span class="nc" id="L8">public class Purchase {</span>
+    private Date purchasedDate;
+<span class="nc" id="L10">    private double cost = 0;</span>
+<span class="nc" id="L11">    private HashMap&lt;Article, PurchasedArticle&gt; basket = new HashMap&lt;Article, PurchasedArticle&gt;();</span>
+
+    public Date getPurchasedDate() {
+<span class="nc" id="L14">        return purchasedDate;</span>
+    }
+
+    public void setPurchasedDate(Date d) {
+<span class="nc" id="L18">        this.purchasedDate = d;</span>
+<span class="nc" id="L19">    }</span>
+
+    public double getCost() {
+<span class="nc" id="L22">        return cost;</span>
+    }
+
+    public void setCost(double cost) {
+<span class="nc" id="L26">        this.cost = cost;</span>
+<span class="nc" id="L27">    }</span>
+
+    /**
+     * Returns an iterator of the articles added to the basket.
+     * 
+     * @return The iterator of the articles included in the basket
+     */
+    public Iterator&lt;PurchasedArticle&gt; getPurchaseIterator() {
+<span class="nc" id="L35">        return basket.values().iterator();</span>
+    }
+
+    /**
+     * Add a new article to the basket.
+     * 
+     * @param art The article to buy.
+     * @param q The added units
+     * @return The total ammount of the articles included in the basket
+     */
+    public double addBasket(Article art, int q) {
+<span class="nc bnc" id="L46" title="All 2 branches missed.">        if (purchasedDate != null)</span>
+<span class="nc" id="L47">            throw new RuntimeException(&quot;The purchase is closed. No articles can be added&quot;);</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (art.getStock() &lt; q)</span>
+<span class="nc" id="L49">            throw new RuntimeException(&quot;There is not enough stock&quot;);</span>
+
+<span class="nc" id="L51">        PurchasedArticle purchasedArticle = basket.get(art);</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        if (purchasedArticle == null) {</span>
+<span class="nc" id="L53">            PurchasedArticle part = new PurchasedArticle(art, q);</span>
+<span class="nc" id="L54">            basket.put(art, part);</span>
+<span class="nc" id="L55">        } else</span>
+<span class="nc" id="L56">            purchasedArticle.setQuantity(purchasedArticle.getQuantity() + q);</span>
+<span class="nc" id="L57">        art.setStock(art.getStock() - q);</span>
+
+<span class="nc" id="L59">        cost = cost + q * art.getPrice();</span>
+<span class="nc" id="L60">        return cost;</span>
+    }
+
+    /**
+     * Remove a number of units of an article from the basket that is not paid yet.
+     * 
+     * @param art the removed article from the basket
+     * @param q the removed units
+     * @return the updated cost of the basket
+     */
+
+    public double removeBasket(Article art, int q) {
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (purchasedDate != null) {</span>
+<span class="nc" id="L73">            throw new RuntimeException(&quot;The purchase is closed. No articles can be removed&quot;);</span>
+        }
+<span class="nc" id="L75">        PurchasedArticle purchasedArticle = basket.get(art);</span>
+
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        if (purchasedArticle == null)</span>
+<span class="nc" id="L78">            throw new RuntimeException(&quot;This product was not in the basket.&quot;);</span>
+
+<span class="nc" id="L80">        int purchasedQuantity = purchasedArticle.getQuantity();</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">        if (purchasedQuantity &lt; q)</span>
+<span class="nc" id="L82">            throw new RuntimeException(&quot;Yo have not too much products.&quot;);</span>
+
+<span class="nc bnc" id="L84" title="All 2 branches missed.">        if (purchasedQuantity == q)</span>
+<span class="nc" id="L85">            basket.remove(art);</span>
+        else
+<span class="nc" id="L87">            purchasedArticle.setQuantity(purchasedQuantity - q);</span>
+
+<span class="nc" id="L89">        double amount = q * purchasedArticle.getPrice();</span>
+<span class="nc" id="L90">        art.setStock(art.getStock() + q);</span>
+<span class="nc" id="L91">        cost = cost - amount;</span>
+
+<span class="nc" id="L93">        return cost;</span>
+    }
+
+    public void buy() throws RuntimeException {
+<span class="nc bnc" id="L97" title="All 2 branches missed.">        if (purchasedDate != null)</span>
+<span class="nc" id="L98">            throw new RuntimeException(&quot;The purchase is already made&quot;);</span>
+<span class="nc" id="L99">        purchasedDate = new Date();</span>
+<span class="nc" id="L100">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

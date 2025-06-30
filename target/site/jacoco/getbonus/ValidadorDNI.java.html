@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ValidadorDNI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">getbonus</a> &gt; <span class="el_source">ValidadorDNI.java</span></div><h1>ValidadorDNI.java</h1><pre class="source lang-java linenums">package getbonus;
+
+/**
+ * Clase que permite validar un DNI. Se crea un objeto del tipo ValidadorDNI y se le pasa un String
+ * a validar.
+ * 
+ * @return true si DNI es correcto. Desarrollado por Manuel Mato.
+ */
+
+public class ValidadorDNI {
+    private String dni;
+
+<span class="nc" id="L13">    public ValidadorDNI(String dni) {</span>
+<span class="nc" id="L14">        this.dni = dni;</span>
+<span class="nc" id="L15">    }</span>
+
+
+    public boolean validar() {
+
+
+<span class="nc" id="L21">        String letraMayuscula = &quot;&quot;; // Guardaremos la letra introducida en formato mayúscula</span>
+
+        // Aquí excluimos cadenas distintas a 9 caracteres que debe tener un dni y también si el
+        // último caracter no es una letra
+<span class="nc bnc" id="L25" title="All 4 branches missed.">        if (dni.length() != 9 || Character.isLetter(this.dni.charAt(8)) == false) {</span>
+<span class="nc" id="L26">            return false;</span>
+        }
+
+
+        // Al superar la primera restricción, la letra la pasamos a mayúscula
+<span class="nc" id="L31">        letraMayuscula = (this.dni.substring(8)).toUpperCase();</span>
+
+        // Por último validamos que sólo tengo 8 dígitos entre los 8 primeros caracteres y que la
+        // letra introducida es igual a la de la ecuación
+        // Llamamos a los métodos privados de la clase soloNumeros() y letraDNI()
+<span class="nc bnc" id="L36" title="All 4 branches missed.">        if (soloNumeros() == true &amp;&amp; letraDNI().equals(letraMayuscula)) {</span>
+<span class="nc" id="L37">            return true;</span>
+        } else {
+<span class="nc" id="L39">            return false;</span>
+        }
+    }
+
+    private boolean soloNumeros() {
+
+<span class="nc" id="L45">        int i, j = 0;</span>
+<span class="nc" id="L46">        String numero = &quot;&quot;; // Es el número que se comprueba uno a uno por si hay alguna letra entre</span>
+                            // los 8 primeros dígitos
+<span class="nc" id="L48">        String miDNI = &quot;&quot;; // Guardamos en una cadena los números para después calcular la letra</span>
+<span class="nc" id="L49">        String[] unoNueve = {&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;, &quot;8&quot;, &quot;9&quot;};</span>
+
+<span class="nc bnc" id="L51" title="All 2 branches missed.">        for (i = 0; i &lt; this.dni.length() - 1; i++) {</span>
+<span class="nc" id="L52">            numero = this.dni.substring(i, i + 1);</span>
+
+<span class="nc bnc" id="L54" title="All 2 branches missed.">            for (j = 0; j &lt; unoNueve.length; j++) {</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">                if (numero.equals(unoNueve[j])) {</span>
+<span class="nc" id="L56">                    miDNI += unoNueve[j];</span>
+                }
+            }
+        }
+
+<span class="nc bnc" id="L61" title="All 2 branches missed.">        if (miDNI.length() != 8) {</span>
+<span class="nc" id="L62">            return false;</span>
+        } else {
+<span class="nc" id="L64">            return true;</span>
+        }
+    }
+
+    private String letraDNI() {
+        // El método es privado porque lo voy a usar internamente en esta clase, no se necesita
+        // fuera de ella
+
+        // pasar miNumero a integer
+<span class="nc" id="L73">        int miDNI = Integer.parseInt(this.dni.substring(0, 8));</span>
+<span class="nc" id="L74">        int resto = 0;</span>
+<span class="nc" id="L75">        String miLetra = &quot;&quot;;</span>
+<span class="nc" id="L76">        String[] asignacionLetra = {&quot;T&quot;, &quot;R&quot;, &quot;W&quot;, &quot;A&quot;, &quot;G&quot;, &quot;M&quot;, &quot;Y&quot;, &quot;F&quot;, &quot;P&quot;, &quot;D&quot;, &quot;X&quot;, &quot;B&quot;, &quot;N&quot;, &quot;J&quot;, &quot;Z&quot;, &quot;S&quot;, &quot;Q&quot;,</span>
+                &quot;V&quot;, &quot;H&quot;, &quot;L&quot;, &quot;C&quot;, &quot;K&quot;, &quot;E&quot;};
+
+<span class="nc" id="L79">        resto = miDNI % 23;</span>
+
+<span class="nc" id="L81">        miLetra = asignacionLetra[resto];</span>
+
+<span class="nc" id="L83">        return miLetra;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
