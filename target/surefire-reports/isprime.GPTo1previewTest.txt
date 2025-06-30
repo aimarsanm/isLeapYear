@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: isprime.Gemini25propreTest
+Test set: isprime.GPTo1previewTest
 -------------------------------------------------------------------------------
-Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.128 s -- in isprime.Gemini25propreTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.089 s -- in isprime.GPTo1previewTest

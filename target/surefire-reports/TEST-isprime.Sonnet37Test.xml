@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="isprime.Gemini25propreTest" time="0.128" tests="22" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="isprime.Sonnet37Test" time="7.726" tests="37" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -58,26 +58,41 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="testIsPrime_whenNumberIsNotPrime_thenReturnFalse(String)[1]" classname="isprime.Gemini25propreTest" time="0.006"/>
-  <testcase name="testIsPrime_whenNumberIsNotPrime_thenReturnFalse(String)[2]" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenNumberIsNotPrime_thenReturnFalse(String)[3]" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenNumberIsNotPrime_thenReturnFalse(String)[4]" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenNumberIsNotPrime_thenReturnFalse(String)[5]" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenNumberIsNotPrime_thenReturnFalse(String)[6]" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenInputIsFloatAndIntegerPartIsNotPrime_thenReturnFalse" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenInputIsFloatAndIntegerPartIsPrime_thenReturnTrue" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenArgIsNotANumber_thenThrowNoPositiveNumberException" classname="isprime.Gemini25propreTest" time="0.004"/>
-  <testcase name="testIsPrime_whenNumberIsPrime_thenReturnTrue(String)[1]" classname="isprime.Gemini25propreTest" time="0.003"/>
-  <testcase name="testIsPrime_whenNumberIsPrime_thenReturnTrue(String)[2]" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenNumberIsPrime_thenReturnTrue(String)[3]" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenNumberIsPrime_thenReturnTrue(String)[4]" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenNumberIsPrime_thenReturnTrue(String)[5]" classname="isprime.Gemini25propreTest" time="0.001"/>
-  <testcase name="testIsPrime_whenNumberIsPrime_thenReturnTrue(String)[6]" classname="isprime.Gemini25propreTest" time="0.003"/>
-  <testcase name="testIsPrime_whenArgsIsEmpty_thenThrowArrayIndexOutOfBoundsException" classname="isprime.Gemini25propreTest" time="0.003"/>
-  <testcase name="testIsPrime_whenNumberIsZeroOrNegative_thenThrowNoPositiveNumberException(String)[1]" classname="isprime.Gemini25propreTest" time="0.008"/>
-  <testcase name="testIsPrime_whenNumberIsZeroOrNegative_thenThrowNoPositiveNumberException(String)[2]" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenNumberIsZeroOrNegative_thenThrowNoPositiveNumberException(String)[3]" classname="isprime.Gemini25propreTest" time="0.002"/>
-  <testcase name="testIsPrime_whenNumberIsOne_thenReturnTrue" classname="isprime.Gemini25propreTest" time="0.006"/>
-  <testcase name="testIsPrime_whenArgsLengthIsGreaterThanOne_thenThrowOnly1ArgumentException" classname="isprime.Gemini25propreTest" time="0.006"/>
-  <testcase name="testIsPrime_whenArgsIsNull_thenThrowMissingArgumentException" classname="isprime.Gemini25propreTest" time="0.009"/>
+  <testcase name="testNumberOne" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testNullArgs" classname="isprime.Sonnet37Test" time="0.004"/>
+  <testcase name="testNonPositiveNumber(String)[1]" classname="isprime.Sonnet37Test" time="0.004"/>
+  <testcase name="testNonPositiveNumber(String)[2]" classname="isprime.Sonnet37Test" time="0.006"/>
+  <testcase name="testNonPositiveNumber(String)[3]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testNonPrimeNumbers(String)[1]" classname="isprime.Sonnet37Test" time="0.005"/>
+  <testcase name="testNonPrimeNumbers(String)[2]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testNonPrimeNumbers(String)[3]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testNonPrimeNumbers(String)[4]" classname="isprime.Sonnet37Test" time="0.001"/>
+  <testcase name="testNonPrimeNumbers(String)[5]" classname="isprime.Sonnet37Test" time="0.001"/>
+  <testcase name="testNonPrimeNumbers(String)[6]" classname="isprime.Sonnet37Test" time="0.003"/>
+  <testcase name="testNonPrimeNumbers(String)[7]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testNonPrimeNumbers(String)[8]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testNonPrimeNumbers(String)[9]" classname="isprime.Sonnet37Test" time="0.003"/>
+  <testcase name="testNonPrimeNumbers(String)[10]" classname="isprime.Sonnet37Test" time="0.003"/>
+  <testcase name="testNonPrimeNumbers(String)[11]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testNonPrimeNumbers(String)[12]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testInvalidNumberFormat(String)[1]" classname="isprime.Sonnet37Test" time="0.014"/>
+  <testcase name="testInvalidNumberFormat(String)[2]" classname="isprime.Sonnet37Test" time="0.006"/>
+  <testcase name="testPrimeNumbers(String)[1]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testPrimeNumbers(String)[2]" classname="isprime.Sonnet37Test" time="0.001"/>
+  <testcase name="testPrimeNumbers(String)[3]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testPrimeNumbers(String)[4]" classname="isprime.Sonnet37Test" time="0.001"/>
+  <testcase name="testPrimeNumbers(String)[5]" classname="isprime.Sonnet37Test" time="0.001"/>
+  <testcase name="testPrimeNumbers(String)[6]" classname="isprime.Sonnet37Test" time="0.001"/>
+  <testcase name="testPrimeNumbers(String)[7]" classname="isprime.Sonnet37Test" time="0.001"/>
+  <testcase name="testPrimeNumbers(String)[8]" classname="isprime.Sonnet37Test" time="0.007"/>
+  <testcase name="testPrimeNumbers(String)[9]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testPrimeNumbers(String)[10]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testPrimeNumbers(String)[11]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testPrimeNumbers(String)[12]" classname="isprime.Sonnet37Test" time="0.001"/>
+  <testcase name="testFloatNumbers(String, boolean)[1]" classname="isprime.Sonnet37Test" time="0.006"/>
+  <testcase name="testFloatNumbers(String, boolean)[2]" classname="isprime.Sonnet37Test" time="0.001"/>
+  <testcase name="testFloatNumbers(String, boolean)[3]" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testFloatNumbers(String, boolean)[4]" classname="isprime.Sonnet37Test" time="0.001"/>
+  <testcase name="testMultipleArgs" classname="isprime.Sonnet37Test" time="0.002"/>
+  <testcase name="testLargePrimeNumber(String)[1]" classname="isprime.Sonnet37Test" time="7.518"/>
 </testsuite>

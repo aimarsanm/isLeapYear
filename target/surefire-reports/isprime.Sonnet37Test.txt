@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: isprime.Gemini25propreTest
+Test set: isprime.Sonnet37Test
 -------------------------------------------------------------------------------
-Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.128 s -- in isprime.Gemini25propreTest
+Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.726 s -- in isprime.Sonnet37Test
