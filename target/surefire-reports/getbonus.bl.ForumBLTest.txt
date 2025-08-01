@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: getbonus.bl.ForumBLTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.782 s -- in getbonus.bl.ForumBLTest

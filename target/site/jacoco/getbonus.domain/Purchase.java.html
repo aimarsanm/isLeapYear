@@ -6,8 +6,8 @@ import java.util.Iterator;
 
 public class Purchase {
     private Date purchasedDate;
-<span class="nc" id="L9">    private double cost = 0;</span>
-<span class="nc" id="L10">    private final HashMap&lt;Article, PurchasedArticle&gt; basket = new HashMap&lt;&gt;();</span>
+<span class="pc" id="L9">    private double cost = 0;</span>
+<span class="pc" id="L10">    private final HashMap&lt;Article, PurchasedArticle&gt; basket = new HashMap&lt;&gt;();</span>
 
     public Date getPurchasedDate() {
 <span class="nc" id="L13">        return purchasedDate;</span>
@@ -31,7 +31,7 @@ public class Purchase {
      * @return The iterator of the articles included in the basket
      */
     public Iterator&lt;PurchasedArticle&gt; getPurchaseIterator() {
-<span class="nc" id="L34">        return basket.values().iterator();</span>
+<span class="fc" id="L34">        return basket.values().iterator();</span>
     }
 
     /**
@@ -105,16 +105,16 @@ public class Purchase {
     /**
      * Constructor used in tests to initialize purchase with a date.
      */
-<span class="nc" id="L108">    public Purchase(Date purchasedDate) {</span>
-<span class="nc" id="L109">        this.purchasedDate = purchasedDate;</span>
-<span class="nc" id="L110">    }</span>
+<span class="fc" id="L108">    public Purchase(Date purchasedDate) {</span>
+<span class="fc" id="L109">        this.purchasedDate = purchasedDate;</span>
+<span class="fc" id="L110">    }</span>
 
     /**
      * Adds a PurchasedArticle directly to the basket.
      */
     public void addArticle(PurchasedArticle pa) {
-<span class="nc" id="L116">        basket.put(pa.getArt(), pa);</span>
-<span class="nc" id="L117">        cost += pa.getQuantity() * pa.getPrice();</span>
-<span class="nc" id="L118">    }</span>
+<span class="fc" id="L116">        basket.put(pa.getArt(), pa);</span>
+<span class="fc" id="L117">        cost += pa.getQuantity() * pa.getPrice();</span>
+<span class="fc" id="L118">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

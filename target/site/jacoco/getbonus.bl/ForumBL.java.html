@@ -21,13 +21,13 @@
 <span class="fc" id="L21">        }</span>
 
         public User addUser(String id, String name, String tel) throws NullParameterException, UserNotFoundException {
-<span class="fc bfc" id="L24" title="All 4 branches covered.">            if (id == null || name == null)</span>
-<span class="fc" id="L25">                throw new NullParameterException(&quot;id or name is null&quot;);</span>
-<span class="fc bfc" id="L26" title="All 2 branches covered.">            if (!dao.existUserDAO(id)) {</span>
-<span class="fc" id="L27">                dao.addUserDAO(id, name, tel);</span>
-<span class="fc" id="L28">                return dao.getUserDAO(id);</span>
+<span class="nc bnc" id="L24" title="All 4 branches missed.">            if (id == null || name == null)</span>
+<span class="nc" id="L25">                throw new NullParameterException(&quot;id or name is null&quot;);</span>
+<span class="nc bnc" id="L26" title="All 2 branches missed.">            if (!dao.existUserDAO(id)) {</span>
+<span class="nc" id="L27">                dao.addUserDAO(id, name, tel);</span>
+<span class="nc" id="L28">                return dao.getUserDAO(id);</span>
             } else
-<span class="fc" id="L30">                throw new UserNotFoundException(&quot;id no in DB&quot;);</span>
+<span class="nc" id="L30">                throw new UserNotFoundException(&quot;id no in DB&quot;);</span>
         }
 
         public boolean removeUser(String id) {
@@ -68,43 +68,43 @@
         }
 
         public float getBonus(String id) throws Exception {
-<span class="nc bnc" id="L71" title="All 4 branches missed.">            if ((id == null) || (!new ValidadorDNI(id).validar()))</span>
-<span class="nc" id="L72">                throw new Exception(&quot;id null or not valid&quot;);</span>
+<span class="fc bfc" id="L71" title="All 4 branches covered.">            if ((id == null) || (!new ValidadorDNI(id).validar()))</span>
+<span class="fc" id="L72">                throw new Exception(&quot;id null or not valid&quot;);</span>
 
-<span class="nc" id="L74">            User u = dao.getUserDAO(id);</span>
+<span class="fc" id="L74">            User u = dao.getUserDAO(id);</span>
 
-<span class="nc bnc" id="L76" title="All 2 branches missed.">            if (u == null)</span>
-<span class="nc" id="L77">                throw new Exception(&quot;NAN not in Database&quot;);</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">            if (u == null)</span>
+<span class="fc" id="L77">                throw new Exception(&quot;NAN not in Database&quot;);</span>
 
-<span class="nc bnc" id="L79" title="All 2 branches missed.">            if (u.getTelephone() == null)</span>
-<span class="nc" id="L80">                throw new Exception(id + &quot; not registered telephone&quot;);</span>
+<span class="fc bfc" id="L79" title="All 2 branches covered.">            if (u.getTelephone() == null)</span>
+<span class="fc" id="L80">                throw new Exception(id + &quot; not registered telephone&quot;);</span>
 
-<span class="nc" id="L82">            SimpleDateFormat sdf = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
-<span class="nc" id="L83">            Date firstDate = sdf.parse(&quot;01/09/2022&quot;);</span>
-<span class="nc" id="L84">            Date lastDate = sdf.parse(&quot;06/12/2022&quot;);</span>
+<span class="fc" id="L82">            SimpleDateFormat sdf = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="fc" id="L83">            Date firstDate = sdf.parse(&quot;01/09/2022&quot;);</span>
+<span class="fc" id="L84">            Date lastDate = sdf.parse(&quot;06/12/2022&quot;);</span>
 
-<span class="nc" id="L86">            Iterator&lt;Purchase&gt; purchases = dao.getPurchasesDAO(u, firstDate, lastDate);</span>
-<span class="nc" id="L87">            float sumPurchases = 0;</span>
-<span class="nc" id="L88">            float vat = 0;</span>
-<span class="nc bnc" id="L89" title="All 2 branches missed.">            while (purchases.hasNext()) {</span>
-<span class="nc" id="L90">                System.out.println(&quot;sum&quot; + sumPurchases);</span>
-<span class="nc" id="L91">                Purchase c = purchases.next();</span>
-<span class="nc" id="L92">                Iterator&lt;PurchasedArticle&gt; articles = c.getPurchaseIterator();</span>
-<span class="nc bnc" id="L93" title="All 2 branches missed.">                while (articles.hasNext()) {</span>
-<span class="nc" id="L94">                    PurchasedArticle article = articles.next();</span>
-<span class="nc bnc" id="L95" title="All 2 branches missed.">                    if (!article.isOutlet())</span>
-<span class="nc" id="L96">                        sumPurchases = sumPurchases + article.getPrice() * article.getQuantity();</span>
-<span class="nc" id="L97">                    System.out.println(&quot;sum&quot; + sumPurchases);</span>
+<span class="fc" id="L86">            Iterator&lt;Purchase&gt; purchases = dao.getPurchasesDAO(u, firstDate, lastDate);</span>
+<span class="fc" id="L87">            float sumPurchases = 0;</span>
+<span class="fc" id="L88">            float vat = 0;</span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">            while (purchases.hasNext()) {</span>
+<span class="fc" id="L90">                System.out.println(&quot;sum&quot; + sumPurchases);</span>
+<span class="fc" id="L91">                Purchase c = purchases.next();</span>
+<span class="fc" id="L92">                Iterator&lt;PurchasedArticle&gt; articles = c.getPurchaseIterator();</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">                while (articles.hasNext()) {</span>
+<span class="fc" id="L94">                    PurchasedArticle article = articles.next();</span>
+<span class="fc bfc" id="L95" title="All 2 branches covered.">                    if (!article.isOutlet())</span>
+<span class="fc" id="L96">                        sumPurchases = sumPurchases + article.getPrice() * article.getQuantity();</span>
+<span class="fc" id="L97">                    System.out.println(&quot;sum&quot; + sumPurchases);</span>
 
-<span class="nc" id="L99">                }</span>
-<span class="nc" id="L100">            }</span>
-<span class="nc bnc" id="L101" title="All 2 branches missed.">            if (sumPurchases &gt; 30)</span>
-<span class="nc bnc" id="L102" title="All 2 branches missed.">                if (sumPurchases &gt; 288)</span>
-<span class="nc" id="L103">                    vat = 50;</span>
+<span class="fc" id="L99">                }</span>
+<span class="fc" id="L100">            }</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">            if (sumPurchases &gt; 30)</span>
+<span class="fc bfc" id="L102" title="All 2 branches covered.">                if (sumPurchases &gt; 288)</span>
+<span class="fc" id="L103">                    vat = 50;</span>
                 else
-<span class="nc" id="L105">                    vat = (float) (sumPurchases * 0.1735);</span>
+<span class="fc" id="L105">                    vat = (float) (sumPurchases * 0.1735);</span>
 
-<span class="nc" id="L107">            return vat;</span>
+<span class="fc" id="L107">            return vat;</span>
         }
     }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
