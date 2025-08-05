@@ -10,21 +10,21 @@
      */
     public static boolean isPrime(String[] args)
             throws MissingArgumentException, Only1ArgumentException, NoPositiveNumberException {
-<span class="fc bfc" id="L13" title="All 2 branches covered.">        if (args == null)</span>
-<span class="fc" id="L14">            throw new MissingArgumentException();</span>
-<span class="pc bpc" id="L15" title="1 of 2 branches missed.">        else if (args.length &gt; 1)</span>
+<span class="nc bnc" id="L13" title="All 2 branches missed.">        if (args == null)</span>
+<span class="nc" id="L14">            throw new MissingArgumentException();</span>
+<span class="nc bnc" id="L15" title="All 2 branches missed.">        else if (args.length &gt; 1)</span>
 <span class="nc" id="L16">            throw new Only1ArgumentException();</span>
         else {
             try {
-<span class="fc" id="L19">                float numF = Float.parseFloat(args[0]);</span>
-<span class="fc" id="L20">                int num = (int) numF;</span>
-<span class="pc bpc" id="L21" title="1 of 2 branches missed.">                if (num &lt;= 0)</span>
+<span class="nc" id="L19">                float numF = Float.parseFloat(args[0]);</span>
+<span class="nc" id="L20">                int num = (int) numF;</span>
+<span class="nc bnc" id="L21" title="All 2 branches missed.">                if (num &lt;= 0)</span>
 <span class="nc" id="L22">                    throw new NoPositiveNumberException();</span>
                 else {
-<span class="fc bfc" id="L24" title="All 2 branches covered.">                    for (int i = 2; i &lt; num; i++)</span>
-<span class="fc bfc" id="L25" title="All 2 branches covered.">                        if (num % i == 0)</span>
-<span class="fc" id="L26">                            return false;</span>
-<span class="fc" id="L27">                    return true;</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">                    for (int i = 2; i &lt; num; i++)</span>
+<span class="nc bnc" id="L25" title="All 2 branches missed.">                        if (num % i == 0)</span>
+<span class="nc" id="L26">                            return false;</span>
+<span class="nc" id="L27">                    return true;</span>
                 }
 <span class="nc" id="L29">            } catch (NumberFormatException e) {</span>
 <span class="nc" id="L30">                throw new NoPositiveNumberException();</span>
