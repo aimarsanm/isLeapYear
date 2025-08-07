@@ -20,32 +20,32 @@ import java.util.Map;
      */
     public static boolean isStrobogrammic(String number) {
         // Check for null or empty string
-<span class="fc bfc" id="L23" title="All 4 branches covered.">        if (number == null || number.length() == 0) {</span>
-<span class="fc" id="L24">            return true;</span>
+<span class="nc bnc" id="L23" title="All 4 branches missed.">        if (number == null || number.length() == 0) {</span>
+<span class="nc" id="L24">            return true;</span>
         }
         // Create a HashMap to store Strobogrammatic pairs
-<span class="fc" id="L27">        Map&lt;Character, Character&gt; map = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L28">        map.put('0', '0');</span>
-<span class="fc" id="L29">        map.put('1', '1');</span>
-<span class="fc" id="L30">        map.put('8', '8');</span>
-<span class="fc" id="L31">        map.put('6', '9');</span>
-<span class="fc" id="L32">        map.put('9', '6');</span>
+<span class="nc" id="L27">        Map&lt;Character, Character&gt; map = new HashMap&lt;&gt;();</span>
+<span class="nc" id="L28">        map.put('0', '0');</span>
+<span class="nc" id="L29">        map.put('1', '1');</span>
+<span class="nc" id="L30">        map.put('8', '8');</span>
+<span class="nc" id="L31">        map.put('6', '9');</span>
+<span class="nc" id="L32">        map.put('9', '6');</span>
         // Use two pointers to traverse the string from both ends
-<span class="fc" id="L34">        int left = 0;</span>
-<span class="fc" id="L35">        int right = number.length() - 1;</span>
+<span class="nc" id="L34">        int left = 0;</span>
+<span class="nc" id="L35">        int right = number.length() - 1;</span>
         // Continue until the left pointer is less than or equal to the right pointer
-<span class="fc bfc" id="L37" title="All 2 branches covered.">        while (left &lt;= right) {</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">        while (left &lt;= right) {</span>
             // Check if the characters at the current positions are valid Strobogrammatic
             // pairs
-<span class="fc bfc" id="L40" title="All 4 branches covered.">            if (!map.containsKey(number.charAt(right)) || number.charAt(left) != map.get(number.charAt(right))) {</span>
-<span class="fc" id="L41">                return false;</span>
+<span class="nc bnc" id="L40" title="All 4 branches missed.">            if (!map.containsKey(number.charAt(right)) || number.charAt(left) != map.get(number.charAt(right))) {</span>
+<span class="nc" id="L41">                return false;</span>
             }
             // Move the pointers towards the center
-<span class="fc" id="L44">            left++;</span>
-<span class="fc" id="L45">            right--;</span>
+<span class="nc" id="L44">            left++;</span>
+<span class="nc" id="L45">            right--;</span>
         }
         // If the loop completes, the string is Strobogrammatic
-<span class="fc" id="L48">        return true;</span>
+<span class="nc" id="L48">        return true;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

@@ -17,18 +17,18 @@
         ForumDAOInterface dao;
         // API Usuarios
 
-<span class="nc" id="L20">        public ForumBL(ForumDAOInterface dao) {</span>
-<span class="nc" id="L21">            this.dao = dao;</span>
-<span class="nc" id="L22">        }</span>
+<span class="fc" id="L20">        public ForumBL(ForumDAOInterface dao) {</span>
+<span class="fc" id="L21">            this.dao = dao;</span>
+<span class="fc" id="L22">        }</span>
 
         public User addUser(String id, String name, String tel) throws NullParameterException, UserNotFoundException {
-<span class="nc bnc" id="L25" title="All 4 branches missed.">            if (id == null || name == null)</span>
-<span class="nc" id="L26">                throw new NullParameterException(&quot;id or name is null&quot;);</span>
-<span class="nc bnc" id="L27" title="All 2 branches missed.">            if (!dao.existUserDAO(id)) {</span>
-<span class="nc" id="L28">                dao.addUserDAO(id, name, tel);</span>
-<span class="nc" id="L29">                return dao.getUserDAO(id);</span>
+<span class="fc bfc" id="L25" title="All 4 branches covered.">            if (id == null || name == null)</span>
+<span class="fc" id="L26">                throw new NullParameterException(&quot;id or name is null&quot;);</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">            if (!dao.existUserDAO(id)) {</span>
+<span class="fc" id="L28">                dao.addUserDAO(id, name, tel);</span>
+<span class="fc" id="L29">                return dao.getUserDAO(id);</span>
             } else
-<span class="nc" id="L31">                throw new UserNotFoundException(&quot;id no in DB&quot;);</span>
+<span class="fc" id="L31">                throw new UserNotFoundException(&quot;id no in DB&quot;);</span>
         }
 
         public boolean removeUser(String id) {
